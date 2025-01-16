@@ -1,8 +1,8 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     mySprite.startEffect(effects.spray, 200)
     info.score()
-    web.open("https://115.111.238.147:889/api/ECommReflection?playername=" + info.score() + "&score=" + info.score())
-    game.over(false)
+web.open("https://115.111.238.147:889/api/ECommReflection?playername=" + info.score() + "&score=" + info.score())
+game.over(false)
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -28,23 +28,6 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSide(img`
-        . . . . . . . 6 . . . . . . . . 
-        . . . . . . 8 6 6 . . . 6 8 . . 
-        . . . e e e 8 8 6 6 . 6 7 8 . . 
-        . . e 2 2 2 2 e 8 6 6 7 6 . . . 
-        . e 2 2 4 4 2 7 7 7 7 7 8 6 . . 
-        . e 2 4 4 2 6 7 7 7 6 7 6 8 8 . 
-        e 2 4 5 2 2 6 7 7 6 2 7 7 6 . . 
-        e 2 4 4 2 2 6 7 6 2 2 6 7 7 6 . 
-        e 2 4 2 2 2 6 6 2 2 2 e 7 7 6 . 
-        e 2 4 2 2 4 2 2 2 4 2 2 e 7 6 . 
-        e 2 4 2 2 2 2 2 2 2 2 2 e c 6 . 
-        e 2 2 2 2 2 2 2 4 e 2 e e c . . 
-        e e 2 e 2 2 4 2 2 e e e c . . . 
-        e e e e 2 e 2 2 e e e c . . . . 
-        e e e 2 e e c e c c c . . . . . 
-        . c c c c c c c . . . . . . . . 
-        `, randint(-50, 50), randint(-50, 50))
+    projectile = sprites.createProjectileFromSide(assets.image`myImage`, randint(-50, 50), randint(-50, 50))
     info.changeScoreBy(1)
 })
