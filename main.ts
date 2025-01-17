@@ -28,6 +28,6 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 mySprite.setStayInScreen(true)
 game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSide(assets.image`myImage1`, randint(-50, 50), randint(-50, 50))
+    projectile = sprites.createProjectileFromSide(assets.image`myImage`, randint(-50, 50), randint(-50, 50))
     info.changeScoreBy(1)
 })
